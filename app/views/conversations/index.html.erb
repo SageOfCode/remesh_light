@@ -1,0 +1,8 @@
+<h1>View All Conversations</h1>
+
+<% @conversations.each do |convo| %>
+  <div class="convo-<%= convo.id %>">
+    <h3><%= link_to "#{convo.title}", conversations_path(convo.id) %></h3>
+    <p>Start Date: <%= convo.start_date %></p><br>
+  </div>
+<% end %>
