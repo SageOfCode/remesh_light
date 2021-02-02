@@ -1,4 +1,8 @@
-<h1>View All Conversations</h1>
+<h1>Conversations</h1>
+
+  <%= link_to "Create a Conversation", "/conversations/new" %>
+
+<h2>View All Conversations</h2>
 
 <% @conversations.each do |convo| %>
   <div class="convo-<%= convo.id %>">
