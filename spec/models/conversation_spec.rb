@@ -9,4 +9,13 @@ RSpec.describe Conversation, type: :model do
   describe 'relationships' do
     it {should have_many :messages}
   end
+
+  describe 'instance methods' do 
+    it 'start_date' do
+      convo1 = Conversation.create!(
+        title: "Magic Bullet Feedback"
+      )
+      expect("#{convo1.start_date}").to eq("2021-02-02")
+    end
+  end
 end 
