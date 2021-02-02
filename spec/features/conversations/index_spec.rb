@@ -42,6 +42,12 @@ RSpec.describe "As a visitor" do
         expect(page).to have_content("Start Date:")
       end 
     end 
+    it 'I see a button to create a conversation' do
+      visit '/conversations'
+
+      click_link "Create a Conversation"
+      expect(current_path).to eq(new_conversation_path)
+    end
   end 
 end 
 
