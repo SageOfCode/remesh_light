@@ -3,6 +3,10 @@ class ConversationsController < ApplicationController
     @conversations = Conversation.all
   end 
 
+  def show
+    @conversation = Conversation.find(params[:id])
+  end
+
   def new 
     @conversation = Conversation.new
   end
