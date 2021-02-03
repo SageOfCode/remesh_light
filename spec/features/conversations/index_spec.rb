@@ -48,6 +48,16 @@ RSpec.describe "As a visitor" do
       click_link "Create a Conversation"
       expect(current_path).to eq(new_conversation_path)
     end
+    it 'I can search for a conversation by title' do
+      convo1 = Conversation.create!(
+        title: "Magic Bullet Feedback"
+      )
+      visit conversations_path
+
+      fill_in :conversation, with: "Magic Bullet Feedback"
+      click_button "Search"
+      expect(current_path).to eq(conversations_path)
+    end
   end 
 end 
 
