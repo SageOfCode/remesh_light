@@ -1,6 +1,9 @@
 class ConversationsController < ApplicationController
   def index 
     @conversations = Conversation.all
+    if params[:conversation]
+      @search_results = Conversation.where("lower(title) like ?", "%#{params[:conversation]}%".downcase)
+    end
   end 
 
   def show
