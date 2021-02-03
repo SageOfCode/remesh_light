@@ -1,0 +1,26 @@
+<h1>Conversations</h1>
+
+  <%= link_to "Create a Conversation", "/conversations/new" %>
+
+<h2>Search for a Conversation:</h2>
+<%= form_tag conversations_path, method: :get  do %>
+  <%= text_field_tag :conversation %>
+  <%= submit_tag "Search" %>
+<% end %><br>
+
+<% if @search_results %>
+  <p><%= @search_results.count %> Results:</p>
+  <% @search_results.each do |result| %>
+    <%= link_to "#{result.title}", conversation_path(result.id) %>
+    <p>Start Date: <%= result.start_date %></p><br>
+  <% end %>
+<% end %>
+
+<h2>View All Conversations</h2>
+
+<% @conversations.each do |convo| %>
+  <div class="convo-<%= convo.id %>">
+    <h3><%= link_to "#{convo.title}", conversation_path(convo.id) %></h3>
+    <p>Start Date: <%= convo.start_date %></p><br>
+  </div>
+<% end %>

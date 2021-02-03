@@ -1,0 +1,14 @@
+<h1><%= @conversation.title %></h1>
+
+<%= link_to "Add a Message", new_conversation_message_path(@conversation.id) %>
+<h2>Messages for this conversation:</h2><br>
+<% @conversation.messages.each do |message| %>
+  <p>Message: <%= message.text %></p>
+  <p>Message sent at: <%= message.created_at %></p>
+  <%= link_to "Add a Thought for this Message", new_conversation_message_thought_path(@conversation.id, message.id) %>
+    <h3>Thoughts for this message:</h3>
+    <% message.thoughts.each do |thought| %>
+      <p>Thought: <%= thought.text %></p>
+      <p>Thought sent at: <%= thought.created_at %></p>
+    <% end %><br>
+<% end %>

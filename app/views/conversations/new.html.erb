@@ -1,0 +1,7 @@
+<h3>Enter a Title And Click Submit To Create a Conversation</h3>
+
+<%= form_with method: :post, model: @conversation, local: true do |f| %>
+  <%= f.text_field :title, placeholder: "Title" %>
+
+  <%= f.submit %>
+<% end %>
