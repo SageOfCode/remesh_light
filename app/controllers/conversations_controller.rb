@@ -21,6 +21,6 @@ class ConversationsController < ApplicationController
 
   private
   def convo_params
-    params.require(:conversation).permit(:title)
+    params.permit(:title)
   end
 end
