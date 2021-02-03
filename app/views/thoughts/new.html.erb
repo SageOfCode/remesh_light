@@ -1,0 +1,8 @@
+<h3>Enter a Title And Click Submit To Create a Conversation</h3>
+
+<%= form_tag conversation_message_thoughts_path(@conversation.id, @message.id), method: :post  do %>
+  <%= label_tag :text %>
+  <%= text_field_tag :text %>
+
+  <%= submit_tag "Save Thought" %>
+<% end %>
