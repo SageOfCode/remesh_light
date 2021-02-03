@@ -1,0 +1,10 @@
+<h1><%= @conversation.title %></h1>
+
+<% @conversation.messages.each do |message| %>
+  <h3>Messages for this conversation:</h3>
+  <p><%= message.text %></p>
+    <% message.thoughts.each do |thought| %>
+      <p>Thoughts for this message:</p>
+      <p><%= thought.text %></p>
+    <% end %>
+<% end %>
