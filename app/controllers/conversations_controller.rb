@@ -15,7 +15,6 @@ class ConversationsController < ApplicationController
   end
   
   def create
-    # require 'pry'; binding.pry
     @conversation = Conversation.create(convo_params)
     redirect_to conversations_path
   end
