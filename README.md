@@ -42,7 +42,7 @@ You can add a message to a conversation, and you can add a thought to respond to
 ## Licenses
 
   * Ruby 2.5.3
-  * Rails 2.5.4.3
+  * Rails 5.2.4.4
 
 ## Contact
 
