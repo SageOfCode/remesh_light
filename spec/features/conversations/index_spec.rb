@@ -58,6 +58,22 @@ RSpec.describe "As a visitor" do
       click_button "Search"
       expect(current_path).to eq(conversations_path)
     end
+    it 'I can search for a conversation by title and return results' do
+      convo1 = Conversation.create!(
+        title: "Magic Bullet Feedback"
+      )
+      convo2 = Conversation.create!(
+        title: "Generic Blender Feedback"
+      )
+      visit conversations_path
+
+      fill_in :conversation, with: "magic"
+      click_button "Search"
+
+      within '.search-results' do
+        expect(page).to have_content("Magic Bullet Feedback")
+      end
+    end
   end 
 end 
 
